@@ -1,0 +1,50 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  meta(name='description' content='Start your development with a Dashboard for Bootstrap 4.')
+  meta(name='author' content='Creative Tim')
+  // Favicon
+  link(rel='icon' href='/dash/assets/img/brand/favicon.png' type='image/png')
+  // Fonts
+  link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700')
+  // Icons
+  link(rel='stylesheet' href='/dash/assets/vendor/nucleo/css/nucleo.css' type='text/css')
+  link(rel='stylesheet' href='/dash/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css' type='text/css')
+  // Page plugins
+  // Argon CSS
+  link(rel='stylesheet' href='/dash/assets/css/bootstrap/bootstrap.min.css' type='text/css')
+  link(rel='stylesheet' href='/dash/assets/css/argon.css?v=1.2.0' type='text/css')
+  link(rel='stylesheet' href='/dash/assets/css/sweetalert2.min.css' type='text/css')
+  style. 
+    tr td{
+      max-width: 0;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  block pageTitle
+body
+
+  // Topnav   
+  include ../partials/sidebar.pug
+
+  #panel.main-content
+    include ../partials/header.pug    
+    block mainpage
+
+  script(src='/dash/assets/vendor/jquery/dist/jquery.min.js')
+  script(src='/dash/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')
+  script(src='/dash/assets/vendor/js-cookie/js.cookie.js')
+  script(src='/dash/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js')
+  script(src='/dash/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js')
+  // Optional JS
+  script(src='/dash/assets/vendor/chart.js/dist/Chart.min.js')
+  script(src='/dash/assets/vendor/chart.js/dist/Chart.extension.js')
+  block optionJs
+  // Argon JS
+  script(src='/dash/assets/js/argon.js?v=1.2.0')
+  script(src='/dash/assets/js/sweetalert2@10.js')
+  //- script(src='/dash/assets/js/promise-polyfill.js')
+  script(src='/dash/custom/globals.js')
+  block pagescripts

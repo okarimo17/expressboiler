@@ -1,0 +1,87 @@
+extends ./layouts/layout.pug
+
+block title
+  title Blog - Transmed 
+
+block maincontent
+  // Breadcroumbs start
+  .wshipping-content-block.wshipping-breadcroumb.inner-bg-1
+    .container
+      .row
+        .col-12.col-lg-7
+          h1 Actualit&eacute;
+          a(href='/' title='Home') Accueil
+          |  / Actualit&eacute;
+        .col-12.col-lg-5.text-right
+          h4
+            | Nous exp&eacute;dions dans le monde entier La meilleure entreprise de logistique,  
+            span RAPIDE 
+            |  et 
+            span S&Eacute;CURITAIRE!
+  // Breadcroumbs end
+  // Blog content start
+  .wshipping-content-block
+    .container
+      .row.flex-lg-row-reverse
+        .col-12.col-lg-9
+          // blog iteam start
+          if blogs.length==0
+            p Aucune Actualite Existe.
+          for blog in blogs
+            .blog-block
+              .blog-image-bg.blog-image-1(style=`background-image: url('${blog.picture}')`)
+              .blog-content
+                .blog-date
+                  | #{getMonth(blog.createdAt)} 
+                  span #{blog.createdAt.getDate()}
+                  |  #{blog.createdAt.getFullYear()}
+                h3
+                  a(href=`/actualite/${blog.id}` title=blog.title) #{blog.title}
+                .blog-post-by
+                  ul
+                    li
+                      a(href=`/actualite/${blog.id}` title=blog.title)
+                        i.fa.fa-user
+                        |  Posted By Admin
+                p
+                  | #{blog.excrept}.
+              .continue-read-blog
+                a(href=`/actualite/${blog.id}` title=blog.title)
+                  | Continue Reading 
+                  i.fa.fa-angle-right
+              .blog-action
+                .blog-action-holder
+                  a(href='' title='')
+                    i.far.fa-thumbs-up
+                  a(href='' title='')
+                    i.far.fa-thumbs-down
+                .blog-action-holder
+                  a(href='' title='')
+                    i.fa.fa-heart
+                  a(href='' title='')
+                    i.fa.fa-share-alt
+                  a(href='' title='')
+                    i.far.fa-comments
+            // blog iteam end
+          //- .page-navigation
+          //-   nav(aria-label='Page navigation example')
+          //-     ul.pagination.mt40.justify-content-center
+          //-       li.page-item.disabled
+          //-         a.page-link(href='#' tabindex='-1')
+          //-           i.fa.fa-angle-left(aria-hidden='true')
+          //-       li.page-item.pagin-active
+          //-         a.page-link(href='#') 1
+          //-       li.page-item
+          //-         a.page-link(href='#') 2
+          //-       li.page-item
+          //-         a.page-link(href='#') 3
+          //-       li.page-item
+          //-         a.page-link(href='#')
+          //-           i.fa.fa-angle-right(aria-hidden='true')
+          
+          
+          // pagination end
+
+
+  // Blog content end
+

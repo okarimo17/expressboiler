@@ -1,0 +1,18 @@
+extends ./layouts/layout.pug
+
+block pageTitle
+  title Page Not Found
+
+block mainpage
+  .main-body.justify-content-center.align-items-center.d-flex.mt-5
+    .page-header.card.p-5
+      .page-error.tile
+        h1
+          i.fa.fa-exclamation-circle
+          |  Erreur 404 - Page non trouvée
+        p La page que vous avez demandée est introuvable.
+        p: a.btn.btn-primary(href="javascript:window.history.back();") Go Back
+      // Page-header end
+
+
+  

@@ -1,0 +1,96 @@
+extends ./layouts/layout.pug
+
+block title
+  title Import - Transmed 
+
+block maincontent
+  // Breadcroumbs start
+  .wshipping-content-block.wshipping-breadcroumb.inner-bg-1
+    .container
+      .row
+        .col-12.col-lg-7
+          h1 A Propos
+          a(href='index.html' title='Home') Acceuil
+          |  / A Propos
+        .col-12.col-lg-5.text-right
+          h4
+            | Nous exp&eacute;dions dans le monde entier La meilleure entreprise de logistique,  
+            span  RAPIDE
+            |  et 
+            span  S&Eacute;CURITAIRE!
+  // Breadcroumbs end
+  // About content start
+  .wshipping-content-block
+    .container
+      .row.flex-lg-row-reverse
+        .col-12.col-lg-9
+          .right-block
+            h2.text-uppercase A Propos de Transmed
+            img.img-responsive.feat-img(src='assets/images/company-overview.jpg' alt='')
+            p
+              | La société SARL TRANSMED existe depuis 1991, elle s’est spécialiser dans toutes les Operations import-export concernant surtout l’Europe et bien avant d’autre l’Asie Elle a acquis une longue expérience sur le terrain durant plus de deux décennies.
+            p
+              | Elle entretient une très bonne relation avec tous les intervenants qu’ils soient privées ou public dans le domaine maritime et consignation ou administratif douanier sur l’ensemble du territoire national.
+
+        .col-12.col-lg-3
+          .left-block.wow.fadeInUp
+            h3.heading3-border.text-uppercase  Transissions en cours  
+            for trans in transitions
+              - let date = new Date(trans.date)
+              - let month = date.toLocaleString('default', { month: 'short' });
+              .latest-news-section
+                a(href='#' title='')
+                  .news-date
+                    | #{date.getDate()}
+                    span #{month}
+                  h4 #{trans.title}
+                  .news-post-by
+                    | By 
+                    span Admin
+                  p #{trans.excrept}      
+          .left-block.wow.fadeInUp
+            h3.heading3-border.text-uppercase T&eacute;moignages
+            .owl-carousel.testimonial
+              for testimonial in testimonials
+                .testimonial-item
+                  .row
+                    .col-12
+                      .testimonial-img-bg(style=`background-image: url(${testimonial.picture});`)
+                    .col-12
+                      .testimonial-content
+                        p
+                          | #{testimonial.content}
+  // About content end
+  // Counter start
+  .wshipping-content-block.counter-section
+    .container.wow.fadeInUp
+      .row
+        .col-12.col-sm-6.col-lg-3
+          .counter-block
+            span.counter-icon
+              i.fa.fa-folder-open
+            p
+              span.counter(data-count=information.projet) 0
+              |  Projet
+        .col-12.col-sm-6.col-lg-3
+          .counter-block
+            span.counter-icon
+              i.fas.fa-users
+            p
+              span.counter(data-count=information.client) 0
+              | Clients Permanents
+        .col-12.col-sm-6.col-lg-3
+          .counter-block
+            span.counter-icon
+              i.fa.fa-truck
+            p
+              span.counter(data-count=information.transition) 0
+              |  Transitions  Garanties
+        .col-12.col-sm-6.col-lg-3
+          .counter-block
+            span.counter-icon
+              i.fa.fa-male
+            p
+              span.counter(data-count=information.logistic) 0
+              |  Logistique
+  // Counter End

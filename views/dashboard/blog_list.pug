@@ -1,0 +1,95 @@
+extends ./layouts/layout.pug
+
+block pageTitle
+  title Actualités - Dashboard
+
+
+block mainpage
+  // Header
+  .header.bg-primary.pb-6
+    .container-fluid
+      .header-body
+        .row.align-items-center.py-4
+          .col-lg-6.col-7
+            h6.h2.text-white.d-inline-block.mb-0 Actualité
+            nav.d-none.d-md-inline-block.ml-md-4(aria-label='breadcrumb')
+              ol.breadcrumb.breadcrumb-links.breadcrumb-dark
+                li.breadcrumb-item
+                  a(href='/dashboard')
+                    i.fas.fa-home
+                li.breadcrumb-item
+                  a(href='/dashboard/blog') Actualité
+                li.breadcrumb-item.active(aria-current='page') Toutes
+          //- .col-lg-6.col-5.text-right
+          //-   a.btn.btn-sm.btn-neutral(href='#') New
+          //-   a.btn.btn-sm.btn-neutral(href='#') Filters
+  // Page content
+  .container-fluid.mt--6
+    .row
+      .col
+        .card
+          // Card header
+          .card-header.border-0.d-flex.justify-content-between
+            h3.mb-0 Actualité
+            button#new_blog.btn.btn-sm.btn-neutral New
+          // Light table
+          .table-responsive
+            table.table.align-items-center.table-flush
+              thead.thead-light
+                tr
+                  th(scope='col') titre
+                  th(scope='col') descreption
+                  th(scope='col') Status
+                  th(scope='col') Action
+              tbody.list
+                if blogs.length ==0
+                  tr
+                    td.text-center(colspan="4")
+                      | Aucune Actualité Existe ...
+                else 
+                  for blog in blogs
+                    tr                  
+                      td
+                        | #{blog.title || "Non Titré" }
+                      td
+                        | #{blog.excrept || "Non descreption" }
+                      td
+                        span.badge.badge-dot.mr-4
+                          i(class=blog.published ? "bg-success": "bg-warning" )
+                          span.status #{ blog.published ? "published": "unpublished"}
+                      td
+                        a.btn.btn-sm.btn-icon-only.text-primary(href="/dashboard/blog/"+blog.id)
+                          .fas.fa-edit
+                        button#rm_button.btn.btn-sm.btn-icon-only.text-danger(data-id=blog.id)
+                          .fas.fa-trash-alt
+
+        
+          // Card footer
+          //- .card-footer.py-4
+          //-   nav(aria-label='...')
+          //-     ul.pagination.justify-content-end.mb-0
+          //-       li.page-item.disabled
+          //-         a.page-link(href='#' tabindex='-1')
+          //-           i.fas.fa-angle-left
+          //-           span.sr-only Previous
+          //-       li.page-item.active
+          //-         a.page-link(href='#') 1
+          //-       li.page-item
+          //-         a.page-link(href='#')
+          //-           | 2 
+          //-           span.sr-only (current)
+          //-       li.page-item
+          //-         a.page-link(href='#') 3
+          //-       li.page-item
+          //-         a.page-link(href='#')
+          //-           i.fas.fa-angle-right
+          //-           span.sr-only Next
+
+
+ 
+    include ./partials/footer
+
+block pagescripts
+  script(src='/dash/custom/blog_list.js')
+  script. 
+    initBlogPage();

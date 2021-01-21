@@ -1,0 +1,97 @@
+extends ./layouts/layout.pug
+
+block title
+  title Import - Transmed 
+
+block maincontent
+  // Breadcroumbs start
+  .wshipping-content-block.wshipping-breadcroumb.inner-bg-1
+    .container
+      .row
+        .col-12.col-lg-7
+          h1 Import
+          a(href='/' title='Home') Accueil
+          |  / Import
+        .col-12.col-lg-5.text-right
+          h4
+            | Nous exp&eacute;dions dans le monde entier La meilleure entreprise de logistique,  
+            span RAPIDE 
+            |  et 
+            span S&Eacute;CURITAIRE!
+  // Breadcroumbs end
+  // Blog content start
+  .wshipping-content-block
+    .container
+      .row.flex-lg-row-reverse
+        .col-12.col-lg-9
+          // blog iteam start
+          for blog in blogs
+            - let date = new Date(blog.createdAt)
+            - let month = date.toLocaleString('default', { month: 'short' });
+            .blog-block
+              .blog-image-bg.blog-image-2
+              .blog-content
+                .blog-date
+                  | #{month} 
+                  span #{date.getDate()}
+                  |  #{date.getFullYear()}
+                h3
+                  a(href=`/actualite/${blog.id}` title='') #{blog.title}
+                .blog-post-by
+                  ul
+                    li
+                      a(href='' title='')
+                        i.fa.fa-user
+                        |  Posted By Admin
+                p
+                  | #{blog.excrept}
+              .continue-read-blog
+                a(href=`/actualite/${blog.id}` title=blog.title)
+                  | Lire Plus 
+                  i.fa.fa-angle-right
+          
+         
+          // blog iteam end
+        // Blog sidebar start
+        .col-12.col-lg-3
+          .left-block.left-menu.menu-with-title
+            h4.title-with-bg Cat&eacute;gorie
+            ul
+              for category in categories
+                li
+                  a(href='#'+category title=category) #{category}
+            
+        // Blog sidebar end
+  // Freight Gallery Start
+  .gallery-filtariz
+    .container
+      .row
+        .col-12.col-lg-6.offset-lg-3
+          .section-title.wow.fadeInUp
+            h2 Freight Gallery
+            p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      .row
+        ul.simplefilter.nav.nav-pills.d-block
+          // Filter Wrapper Items Starts
+          li.active(data-filter='*')
+            i.fas.fa-bars
+            |  Tout
+          for category in categories
+            li(data-filter=`.${category}`) #{category}
+          // Filter Wrapper Items Ends
+      .row
+        .filtr-container.grid
+          for item in gallery
+            div(class=`col-12 col-sm-6 col-lg-6 col-xl-4 filtr-item ${item.category}`)
+              .pGallery-wrapper
+                .pGallery-img
+                  a.latest-gallery(data-fancybox='' href=item.picture title='Choose Your Freight')
+                    i.fa.fa-search-plus(aria-hidden='true')
+                    img(src=item.picture alt=item.category)
+                .freight-caption
+                  .label-text
+                    a.text-title Choose Your Freight
+                    span.text-category #{item.category}
+
+ 
+  // Freight Gallery end

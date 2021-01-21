@@ -1,0 +1,240 @@
+extends ./layouts/layout.pug
+
+block title
+  title Import - Transmed 
+
+block maincontent
+  // Breadcroumbs start
+  .wshipping-content-block.wshipping-breadcroumb.inner-bg-1
+    .container
+      .row
+        .col-12.col-lg-7
+          h1 Blog
+          a(href='/' title='Home') Accueil
+          |  / Article N&deg;1
+        .col-12.col-lg-5.text-right
+          h4
+            | Nous exp&eacute;dions dans le monde entier La meilleure entreprise de logistique,  
+            span RAPIDE 
+            |  et 
+            span S&Eacute;CURITAIRE!
+
+
+
+
+  .wshipping-content-block
+    .container
+      .row
+        div
+          // Blog content start
+          .single-blog-details
+            img(src='assets/images/blog1.png' style='position:center;' alt='')
+            .single-blog-content
+              h2
+                | CLASSIFICATION DES MARCHANDISES DANGEREUSES
+              p
+                | Le Code maritime international des marchandises dangereuses (Code IMDG) a &eacute;t&eacute; &eacute;labor&eacute; en tant que code international uniforme pour le transport des marchandises dangereuses par mer, notamment en ce qui concerne l&apos;emballage, le transport des conteneurs et l&apos;arrimage.
+              p
+                | Le transport de marchandises dangereuses et de polluants marins dans les navires de mer est r&eacute;glement&eacute; respectivement par la Convention internationale pour la sauvegarde de la vie humaine en mer (SOLAS) et la Convention internationale pour la pr&eacute;vention de la pollution par les navires (MARPOL).
+              p
+                | Les parties pertinentes de SOLAS et MARPOL ont &eacute;t&eacute; &eacute;labor&eacute;es de mani&egrave;re tr&egrave;s d&eacute;taill&eacute;e et sont incluses dans le Code maritime international des marchandises dangereuses (IMDG), faisant ainsi de ce code l&apos;instrument juridique pour le transport maritime de marchandises dangereuses et de polluants marins. &Agrave; partir du 1er janvier 2004, le Code IMDG deviendra une exigence obligatoire.
+              p
+                | Pour tous les modes de transport (maritime, a&eacute;rien, ferroviaire, routier et fluvial), la classification (groupement) des marchandises dangereuses, par type de risque, a &eacute;t&eacute; &eacute;tablie par le Comit&eacute; d&apos;experts du transport des marchandises dangereuses des Nations Unies ( ONU).
+              br
+              br
+              .comment-sec
+                h3.heading3-border.text-uppercase Classe 1: Explosifs 
+                .comment-group
+                  .comment-img
+                    img(src='/assets/log/explosive_1_1.gif' alt='')
+                  .comment-content
+                    h6
+                      strong  Sous-classe 1.1 :
+                    p(style='color:#333;')
+                      | Explosifs pr&eacute;sentant un risque d&apos;explosion en masse
+                      | Se compose d&apos;explosifs pr&eacute;sentant un risque d&apos;explosion en masse.Une explosion de masse est une explosion qui affecte presque toute la charge instantan&eacute;ment.
+                .comment-group
+                  .comment-img
+                    img(src='/assets/log/explosive_1_2.gif' alt='')
+                  .comment-content
+                    h6
+                      strong Sous-classe 1.2 : 
+                    p(style='color:#333;')
+                      | Explosifs pr&eacute;sentant un risque de projection important
+                      | Compos&eacute; d&apos;explosifs qui pr&eacute;sentent un risque de projection mais pas un risque d&apos;explosion en masse.
+                .comment-group
+                  .comment-img
+                    img(src='/assets/log/explosive_1_3.gif' alt='')
+                  .comment-content
+                    h6
+                      strong Sous-classe 1.3 : 
+                    p(style='color:#333;')
+                      | Explosifs avec un feu
+                      | Constitu&eacute;s d&apos;explosifs pr&eacute;sentant un risque d&apos;incendie et pr&eacute;sentant un risque mineur de souffle ou un l&eacute;ger risque de projection, ou les deux, mais pas un risque d&apos;explosion en masse.
+                .comment-group
+                  .comment-img
+                    img(src='/assets/log/explosive_1_4.gif' alt='')
+                  .comment-content
+                    h6
+                      strong Sous-classe 1.4 : 
+                    p(style='color:#333;')
+                      | Danger mineur d&apos;incendie ou de projection
+                      | Se compose d&apos;explosifs pr&eacute;sentant un risque mineur d&apos;explosion. Les effets explosifs sont en grande partie confin&eacute;s &agrave; l&apos;emballage et aucune projection de fragments de taille ou de port&eacute;e appr&eacute;ciables n&apos;est &agrave; pr&eacute;voir. Un feu ext&eacute;rieur ne doit pas provoquer une explosion quasi-instantan&eacute;e de presque tout le contenu de l&apos;emballage.
+                .comment-group
+                  .comment-img
+                    img(src='/assets/log/explosive_1_5.gif' alt='')
+                  .comment-content
+                    h6
+                      strong Sous-classe 1.5 : 
+                    p(style='color:#333;')
+                      | Mati&egrave;res insensibles pr&eacute;sentant un risque d&apos;explosion en masse Constituent des explosifs tr&egrave;s peu sensibles pr&eacute;sentant un risque d&apos;explosion en masse (explosion similaire &agrave; 1.1).Cette division comprend les substances qui pr&eacute;sentent un risque d&apos;explosion en masse mais qui sont si insensibles qu&apos;il y a tr&egrave;s peu de probabilit&eacute; d&apos;amor&ccedil;age ou de passage de la combustion &agrave; la d&eacute;tonation dans des conditions normales de transport.
+                .comment-group
+                  .comment-img
+                    img(src='/assets/log/explosive_1_6.gif' alt='')
+                  .comment-content
+                    h6
+                      strong Sous-classe 1.6 : 
+                    p(style='color:#333;')
+                      | Articles extr&ecirc;mement insensibles Constituent des articles extr&ecirc;mement insensibles qui ne pr&eacute;sentent pas de danger d&apos;explosion en masse. Cette division comprend des articles qui ne contiennent que des substances d&eacute;tonantes extr&ecirc;mement insensibles et qui pr&eacute;sentent une probabilit&eacute; n&eacute;gligeable d&apos;amor&ccedil;age ou de propagation accidentels.
+              br
+              br
+              .comment-sec
+                h3.heading3-border.text-uppercase Classe 2: Gaz 
+                .comment-group
+                  .comment-img
+                    img(src='/assets/log/gas_2_1.gif' alt='')
+                  .comment-content
+                    h6
+                      strong  Sous-classe 2.1 :
+                    p(style='color:#333;')
+                      | Gaz inflammables Gaz qui s&apos;enflamment au contact d&apos;une source d&apos;inflammation, comme l&apos;ac&eacute;tyl&egrave;ne et l&apos;hydrog&egrave;ne. Par gaz inflammable, on entend toute mati&egrave;re inflammable &agrave; 101,3 kPa (14,7 psi) dans un m&eacute;lange contenant 13% ou moins de volume d&apos;air, ou dont la plage d&apos;inflammabilit&eacute; est de 101,3 kPa (14,7 psi) avec un taux d&apos;air d&apos;au moins 12%. de la limite inf&eacute;rieure.
+                .comment-group
+                  .comment-img
+                    img(src='/assets/log/gas_2_2.gif' alt='')
+                  .comment-content
+                    h6
+                      strong Sous-classe 2.2 : 
+                    p(style='color:#333;')
+                      | non inflammable Gaz Gaz qui ne sont ni inflammables , ni toxiques. Comprend les gaz / liquides cryog&eacute;niques (temp&eacute;ratures inf&eacute;rieures &agrave; -100 &deg; C) utilis&eacute;s pour la cryoconservation et les carburants. Cette division comprend le gaz comprim&eacute;, le gaz liqu&eacute;fi&eacute;, le gaz cryog&eacute;nique sous pression, le gaz comprim&eacute; en solution, le gaz asphyxiant et le gaz comburant. Un gaz comprim&eacute; ininflammable et non toxique d&eacute;signe tout mat&eacute;riau qui exerce dans l&apos;emballage une pression absolue de 280 kPa (40,6 psia) ou plus &agrave; 20 &deg; C (68 &deg; F) et ne r&eacute;pond pas &agrave; la d&eacute;finition de la division 2.1 ou 2.3.
+                .comment-group
+                  .comment-img
+                    img(src='/assets/log/gas_2_3.gif' alt='')
+                  .comment-content
+                    h6
+                      strong Sous-classe 2.3 : 
+                    p(style='color:#333;')
+                      | Gaz toxiques Produits susceptibles de causer la mort ou des l&eacute;sions graves &agrave; la sant&eacute; humaine en cas d&apos;inhalation. Gaz toxique par inhalation d&eacute;signe un mat&eacute;riau qui est un gaz &agrave; 20 &deg; C ou moins et une pression de 101,3 kPa (un mat&eacute;riau dont le point d&apos;&eacute;bullition est inf&eacute;rieur ou &eacute;gal &agrave; 20 &deg; C &agrave; 101,3 kPa (14,7 psi)). si toxique pour l&apos;homme au point de pr&eacute;senter un risque pour la sant&eacute; pendant le transport ou en l&apos;absence de donn&eacute;es ad&eacute;quates sur la toxicit&eacute; humaine, est pr&eacute;sum&eacute; toxique pour l&apos;homme, car sa valeur CL50 ne d&eacute;passe pas 5000 ml / m3.
+              .comment-sec
+                h3.heading3-border.text-uppercase Classe 3: Liquides inflammables 
+                .comment-group
+                  .comment-img
+                    img(src='/assets/log/liquid_1_1.gif' alt='')
+                  .comment-content
+                    h6
+                      strong   Liquides inflammables
+                    p(style='color:#333;')
+                      | Un liquide inflammable d&eacute;signe un liquide qui peut s&apos;enflammer facilement ou tout m&eacute;lange ayant un ou plusieurs composants avec un point d&apos;&eacute;clair quelconque. Par exemple: l&apos;ac&eacute;tone, le diesel, l&apos;essence, le k&eacute;ros&egrave;ne, l&apos;huile, etc. Il est fortement recommand&eacute; pour le transport &agrave; ou au-dessus de son point d&apos;&eacute;clair dans un emballage en vrac. Il y a trois groupes principaux de liquide inflammable. Point d&apos;&eacute;clair bas - liquides avec point d&apos;&eacute;clair inf&eacute;rieur &agrave; -18 &deg; C Point d&apos;&eacute;clair interm&eacute;diaire - liquides avec point d&apos;&eacute;clair de -18 &deg; C. jusqu&apos;&agrave; + 23 &deg; C Groupe point d&apos;&eacute;clair &eacute;lev&eacute; - liquides avec point d&apos;&eacute;clair &agrave; partir de + 23 &deg; C
+              .comment-sec
+                h3.heading3-border.text-uppercase Classe 4: Mati&egrave;res solides ou substances inflammables  
+                .comment-group
+                  .comment-img
+                    img(src='/assets/log/flammable_4_1.gif' alt='')
+                  .comment-content
+                    h6
+                      strong  Sous-classe 4.1 :
+                    p(style='color:#333;')
+                      | Mati&egrave;res solides inflammables Mati&egrave;res solides facilement inflammables. Mat&eacute;riaux auto-r&eacute;actifs, thermiquement instables et pouvant subir une d&eacute;composition fortement exothermique m&ecirc;me sans participation d&apos;air. Mati&egrave;res facilement inflammables qui peuvent provoquer un incendie par frottement et pr&eacute;senter une vitesse de combustion sup&eacute;rieure &agrave; 2,2 mm (0,087 pouce) par seconde ou des poudres m&eacute;talliques qui peuvent s&apos;enflammer et r&eacute;agir sur toute la longueur d&apos;un &eacute;chantillon en 10 minutes ou moins.
+                .comment-group
+                  .comment-img
+                    img(src='/assets/log/flammable_4_2.gif' alt='')
+                  .comment-content
+                    h6
+                      strong Sous-classe 4.2 : 
+                    p(style='color:#333;')
+                      | Mati&egrave;res solides spontan&eacute;ment inflammables Mati&egrave;res solides qui s&apos;enflamment spontan&eacute;ment. Un mat&eacute;riau spontan&eacute;ment inflammable est un mat&eacute;riau pyrophorique, liquide ou solide qui peut s&apos;enflammer dans les cinq minutes qui suivent un contact avec l&apos;air ou un mat&eacute;riau auto-chauffant qui, lorsqu&apos;il est en contact avec l&apos;air et sans apport d&apos;&eacute;nergie, est auto-chauffant.
+                .comment-group
+                  .comment-img
+                    img(src='/assets/log/flammable_4_3.gif' alt='')
+                  .comment-content
+                    h6
+                      strong Sous-classe 4.3 : 
+                    p(style='color:#333;')
+                      | Dangereux &agrave; l&apos;&eacute;tat humide Substances solides qui d&eacute;gagent un gaz inflammable lorsqu&apos;elles sont mouill&eacute;es. Dangereux lorsque le mat&eacute;riau humide est un mat&eacute;riau qui, lorsqu&apos;il entre en contact avec l&apos;eau, risque de s&apos;enflammer spontan&eacute;ment ou de d&eacute;gager des gaz inflammables ou toxiques &agrave; un taux sup&eacute;rieur &agrave; 1 L par kilogramme de mati&egrave;re par heure.
+              .comment-sec
+                h3.heading3-border.text-uppercase Classe 5: Mati&egrave;res comburantes et peroxydes organiques   
+                .comment-group
+                  .comment-img
+                    img(src='/assets/log/oxidizing_5_1.gif' alt='')
+                  .comment-content
+                    h6
+                      strong  Sous-classe 5.1 :
+                    p(style='color:#333;')
+                      | Agent oxydant Un agent oxydant d&eacute;signe un mat&eacute;riau qui, g&eacute;n&eacute;ralement en lib&eacute;rant de l&apos;oxyg&egrave;ne, peut provoquer ou am&eacute;liorer la combustion d&apos;autres mat&eacute;riaux.
+                .comment-group
+                  .comment-img
+                    img(src='/assets/log/oxidizing_5_2.gif' alt='')
+                  .comment-content
+                    h6
+                      strong Sous-classe 5.2 : 
+                    p(style='color:#333;')
+                      | Agent oxydant du peroxyde organique Le peroxyde organique d&eacute;signe tout compos&eacute; organique contenant de l&apos;oxyg&egrave;ne dans la structure bivalente et qui peut &ecirc;tre consid&eacute;r&eacute; comme un d&eacute;riv&eacute; du peroxyde d&apos;hydrog&egrave;ne, o&ugrave; un ou plusieurs des atomes d&apos;hydrog&egrave;ne ont &eacute;t&eacute; remplac&eacute;s par des radicaux organiques.
+              .comment-sec
+                h3.heading3-border.text-uppercase  Classe 6: Mati&egrave;res toxiques et infectieuses   
+                .comment-group
+                  .comment-img
+                    img(src='/assets/log/Toxic_6_1.gif' alt='')
+                  .comment-content
+                    h6
+                      strong  Sous-classe 6.1 :
+                    p(style='color:#333;')
+                      | Poison Substances toxiques pouvant entra&icirc;ner la mort ou des risques graves pour la sant&eacute; des personnes pendant le transport.
+                .comment-group
+                  .comment-img
+                    img(src='/assets/log/Toxic_6_1.gif' alt='')
+                  .comment-content
+                    h6
+                      strong Sous-classe 6.2 : 
+                    p(style='color:#333;')
+                      | Il est connu que le mat&eacute;riel de substance infectieuse &agrave; risque biologique contient ou est susceptible de contenir un agent pathog&egrave;ne. Les substances infectieuses sont des substances connues ou susceptibles de contenir des pathog&egrave;nes. Les pathog&egrave;nes sont d&eacute;finis comme des micro-organismes (y compris les bact&eacute;ries, les virus, les rickettsies, les parasites, les champignons) et d&apos;autres agents tels que les prions, qui peuvent causer des maladies chez les humains ou les animaux.
+              .comment-sec
+                h3.heading3-border.text-uppercase  Classe 7: Mati&egrave;res radioactives  
+                .comment-group
+                  .comment-img
+                    img(src='/assets/log/Radyoaktif.gif' alt='')
+                  .comment-content
+                    h6
+                      strong Mati&egrave;res radioactives
+                    p(style='color:#333;')
+                      | Les substances radioactives comprennent des substances ou une combinaison de substances qui &eacute;mettent des rayonnements ionisants
+              .comment-sec
+                h3.heading3-border.text-uppercase  Classe 8: Corrosif Un  
+                .comment-group
+                  .comment-img
+                    img(src='/assets/log/Korozif.gif' alt='')
+                  .comment-content
+                    h6
+                      strong Corrosif Un
+                    p(style='color:#333;')
+                      | mat&eacute;riau corrosif d&eacute;signe un liquide ou un solide qui provoque une destruction compl&egrave;te de la peau humaine sur le site de contact dans un d&eacute;lai sp&eacute;cifi&eacute;. Un liquide qui a un fort taux de corrosion sur l&apos;acier ou l&apos;aluminium est &eacute;galement un mat&eacute;riau corrosif.
+              .comment-sec
+                h3.heading3-border.text-uppercase Classe 9: Divers 
+                .comment-group
+                  .comment-img
+                    img(src='/assets/log/Other_Dangerous.gif' alt='')
+                  .comment-content
+                    h6
+                      strong   Divers
+                    p(style='color:#333;')
+                      | Un mat&eacute;riau qui pr&eacute;sente un danger pendant le transport mais qui ne r&eacute;pond pas &agrave; la d&eacute;finition d&apos;une autre classe de danger. Cette classe comprend: tout mat&eacute;riau qui a une propri&eacute;t&eacute; anesth&eacute;sique, nocive ou similaire susceptible de causer un d&eacute;sagr&eacute;ment ou une g&ecirc;ne extr&ecirc;me &agrave; un membre d&apos;&eacute;quipage de conduite de mani&egrave;re &agrave; emp&ecirc;cher l&apos;ex&eacute;cution correcte des t&acirc;ches ou du mat&eacute;riel pour une mati&egrave;re &agrave; temp&eacute;rature &eacute;lev&eacute;e, une mati&egrave;re dangereuse, un d&eacute;chet dangereux ou un polluant marin
+              |   .
+          // Blog content end
+          .space60
+          // Related blog start
+          // Related blog end
+          // Comment end
+          // Comment form start
+          // Comment form end
+        // Right sidebar end
+
+ 
+  // Freight Gallery end

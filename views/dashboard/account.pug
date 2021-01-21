@@ -1,0 +1,100 @@
+extends ./layouts/layout.pug
+
+block pageTitle
+  title Témoignage - Dashboard
+  style. 
+    .normal-icon-size .icon{
+      width: 1rem;
+      height: 1rem;
+    }
+    .editorjs_holder {
+      background: #F8F9FE;
+      padding: 20px 0;
+      border: 1px solid rgba(0,0,0,0.1);
+      box-shadow: 1px 1px 12px 0px #a6a5ff4d;
+    }
+    img.image_preview {
+      max-height: 350px;
+      margin-top: 15px;
+      width:100%;
+      box-shadow: 2px 2px 10px #00000054;
+    }
+    .card-img-top{    
+      max-height: 150px;
+      object-fit: cover;
+    }
+    .card-body.testimonials_holder{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .card {
+      margin: 5px;
+    }
+        
+
+block mainpage
+
+
+  // Header
+  .header.pb-6.d-flex.align-items-center(style='min-height: 500px; background-image: url(/dash/assets/img/theme/img-1-1000x600.jpg); background-size: cover; background-position: center top;')
+    // Mask
+    span.mask.bg-gradient-default.opacity-8
+    // Header container
+    .container-fluid.d-flex.align-items-center
+      .row
+        .col-lg-7.col-md-10
+          h1.display-2.text-white Bonjour Admin
+          p.text-white.mt-0.mb-5
+            | modifier les informations de vos données de compte
+          //- a.btn.btn-neutral(href='#!') Edit profile
+  // Page content
+  .container-fluid.mt--6
+    .row
+      .col-xl-12.order-xl-1
+        .card
+          .card-header
+            .row.align-items-center
+              .col-8
+                h3.mb-0 Edit profile 
+              .col-4.text-right
+                a.btn.btn-sm.btn-primary(href='#!') Settings
+          .card-body
+            form#info_page
+              h6.heading-small.text-muted.mb-4 User information
+              .pl-lg-4
+                .row.d-none
+                  .col-lg-12
+                    .form-group
+                      input.form-control(name='id' type='text' value=user.id)
+                .row
+                  .col-lg-12
+                    .form-group
+                      label.form-control-label(for='input-username') Username
+                      input#input-username.form-control(name='username' type='text' value=user.username required)
+                  .col-lg-12
+                    .form-group
+                      label.form-control-label(for='input-email') Email address
+                      input#input-email.form-control(name='email' type='email' value=user.email required)
+                .row
+                  .col-lg-12
+                    .form-group
+                      label.form-control-label(for='input-first-name') Mot De Pass actuelle
+                      input#input-first-name.form-control(type='password' name="oldpassword"  required)
+                  .col-lg-12
+                    .form-group
+                      label.form-control-label Nouveau Mot De Pass
+                      input.form-control(type='password' name="password")
+              hr.my-4
+              button#save_info.btn.btn-out-dotted.btn-primary.btn-square.w-100(type="submit") Enregistrer
+
+    include ./partials/footer
+
+
+
+block pagescripts
+
+  script(src='/dash/custom/account.js')
+  script(type='text/javascript').
+    $(document).ready(function(){
+      initAccountPage();
+    })

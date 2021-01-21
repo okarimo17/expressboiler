@@ -1,0 +1,88 @@
+extends ./layouts/layout.pug
+
+block title
+  title Import - Transmed 
+
+block maincontent
+  // Breadcroumbs start
+  .wshipping-content-block.wshipping-breadcroumb.inner-bg-1
+    .container
+      .row
+        .col-12.col-lg-7
+          h1 Import
+          a(href='/' title='Home') Accueil
+          |  / Import
+        .col-12.col-lg-5.text-right
+          h4
+            | Nous exp&eacute;dions dans le monde entier La meilleure entreprise de logistique,  
+            span RAPIDE 
+            |  et 
+            span S&Eacute;CURITAIRE!
+  // Breadcroumbs end
+
+
+
+  .wshipping-content-block
+    .container
+      .row
+        .col-12
+          // blog iteam start
+          .single-blog-details
+            .blog-image-bg.blog-image-1
+            .blog-content.
+              !{page}
+              
+            //- h3
+            //-   a(href='#' title='')    Exportez vos marchandises &agrave; partir de l&rsquo;Alg&eacute;rie
+            //- p
+            //-   | Sarl TRANSMED est devenue un leader incontournable en mati&egrave;re d&rsquo;Exportation de marchandises &agrave; partir de l&rsquo;Alg&eacute;rie, nous exportons vers toutes les destinations et principalement vers l&rsquo;Afrique.
+            //- p
+            //-   | Nous exportons d&eacute;j&agrave; pour le compte de nos clients, diff&eacute;rents articles de grande consommation vers Abidjan et tr&egrave;s prochainement vers Nouakchott et Dakar&mldr;
+            //- p
+            //-   | Toujours en qu&ecirc;te d&rsquo;excellence et de satisfaction client, nous lancerons tr&egrave;s prochainement le service Groupage afin de proposer une prestation compl&egrave;te adapt&eacute; pour chaque client.
+            //- | Pour vous guider et en savoir plus sur nos offres, vous pouvez nous contacter et on se fera un plaisir de vous accompagner.
+            .continue-read-blog
+              a(href='' title='')
+                | Lire Plus 
+                i.fa.fa-angle-right
+        // blog iteam end
+        // Blog sidebar end
+
+
+  
+  
+  
+  
+  
+  // Freight Gallery Start
+  .gallery-filtariz
+    .container
+      .row
+        .col-12.col-lg-6.offset-lg-3
+          .section-title.wow.fadeInUp
+            h2 QUELQUE EXPORTATION
+      .row
+        ul.simplefilter.nav.nav-pills.d-block
+          // Filter Wrapper Items Starts
+          li.active(data-filter='*')
+            i.fas.fa-bars
+            |  Tout
+          for category in categories
+            li(data-filter=`.${category}`) #{category}
+          // Filter Wrapper Items Ends
+      .row
+        .filtr-container.grid
+          for item in gallery
+            div(class=`col-12 col-sm-6 col-lg-6 col-xl-4 filtr-item ${item.category}`)
+              .pGallery-wrapper
+                .pGallery-img
+                  a.latest-gallery(data-fancybox='' href=item.picture title='Choose Your Freight')
+                    i.fa.fa-search-plus(aria-hidden='true')
+                    img(src=item.picture alt=item.category)
+                .freight-caption
+                  .label-text
+                    a.text-title Choose Your Freight
+                    span.text-category #{item.category}
+
+ 
+  // Freight Gallery end

@@ -1,0 +1,166 @@
+extends ./layouts/layout.pug
+
+block title
+  title transmed 
+
+block maincontent
+  // Breadcroumbs start
+  .wshipping-content-block.wshipping-breadcroumb.inner-bg-1
+    .container
+      .row
+        .col-12.col-lg-7
+          h1 #{blog.title}
+          a(href='/' title='Home') Home
+          |  / #{blog.title}
+        .col-12.col-lg-5.text-right
+          h4
+            | We freight to all over the world
+            | The best logistic company, 
+            span FAST
+            |  and 
+            span SAFELY!
+  // Breadcroumbs end
+  // Blog Details start
+  .wshipping-content-block
+    .container
+      .row
+        .col-12.col-lg-8
+          // Blog content start
+          .single-blog-details
+            img.img-responsive.single-blog-img(src=blog.picture alt='')
+            .single-blog-content
+              h2 #{blog.title}
+              h6 Posted on #{blog.createdAt} by Admin
+              //- .blog-post-by
+              //-   ul
+              //-     li
+              //-       i.fa.fa-eye
+              //-       | 20 View
+              //-     li
+              //-       i.fa.fa-comment
+              //-       | 12 comments
+              //-     li
+              //-       i.fa.fa-share-alt
+              //-       | 50 share
+              //-     li
+              //-       i.fa.fa-tag
+              //-       | life style, friends, wonderful
+              div.
+                !{blog.content}
+          
+          // Blog content end
+          .space60
+          // Related blog start
+          .you-may-like
+            h3.heading3-border.text-uppercase You may also like
+            .row
+              for post in similairBlogs
+                .col-12.col-md-6.col-lg-6
+                  .blog-item.wow.fadeInUp
+                    a(href='/actualite/'+post.id title=post.title)
+                      .blog-item-bg.related-blog-bg-1(style=`background-image: url('${post.picture}');`)
+                      .blog-content
+                        h3 #{post.title}
+                        h6 Posted on 8 March 2015 
+
+          // Related blog end
+
+
+
+          //- // Comment start
+          //- .comment-sec
+          //-   h3.heading3-border.text-uppercase 3 Thoughts on &ldquo;Single Post&rdquo;
+          //-   .comment-group
+          //-     .comment-img
+          //-       img(src='/assets/images/comment-pic1.jpg' alt='')
+          //-     .comment-content
+          //-       h6
+          //-         | Kate Winless  
+          //-         span
+          //-           i.fa.fa-clock-o
+          //-           |  14th Feb 2015 at 9.00 am
+          //-       p
+          //-         | Phasellus odio dolor, pretium sit amet aliquam a, gravida eget dui. Pellentesque ipsum sque vitae ut ligula. Ut luctus fermentum commodo. Mauris eget justo turpis, eget fringilla. Duis lobortis cursus mi vel tristique.
+          //-       a(href='' title='') Reply
+          //-     .reply-comment
+          //-       .comment-img
+          //-         img(src='/assets/images/comment-pic2.jpg' alt='')
+          //-       h6
+          //-         | Kate Winless  
+          //-         span
+          //-           i.fa.fa-clock-o
+          //-           |  14th Feb 2015 at 9.00 am
+          //-       p
+          //-         | Phasellus odio dolor, pretium sit amet aliquam a, gravida eget dui. Pellentesque ipsum sque vitae ut ligula. Ut luctus fermentum commodo. Mauris eget justo turpis, eget fringilla. Duis lobortis cursus mi vel tristique.
+          //-       a(href='' title='') Reply
+          //-   .comment-group
+          //-     .comment-img
+          //-       img(src='/assets/images/comment-pic1.jpg' alt='')
+          //-     .comment-content
+          //-       h6
+          //-         | Kate Winless  
+          //-         span
+          //-           i.fa.fa-clock-o
+          //-           |  14th Feb 2015 at 9.00 am
+          //-       p
+          //-         | Phasellus odio dolor, pretium sit amet aliquam a, gravida eget dui. Pellentesque ipsum sque vitae ut ligula. Ut luctus fermentum commodo. Mauris eget justo turpis, eget fringilla. Duis lobortis cursus mi vel tristique.
+          //-       a(href='' title='') Reply
+          //- // Comment end
+          //- // Comment form start
+          //- .comment-form
+          //-   h3 Leave a Comment
+          //-   p Your email address will not be published. Required fields are marked
+          //-   form(action='single-blog.html')
+          //-     .form-group
+          //-       .row
+          //-         .col-12.col-md-6.col-lg-6
+          //-           input.form-control(type='text' placeholder='Name')
+          //-         .col-12.col-md-6.col-lg-6
+          //-           input.form-control(type='email' placeholder='Email')
+          //-     .form-group
+          //-       textarea.form-control(placeholder='Message')
+          //-     .form-group
+          //-       button.btn.btn-submit(type='submit') Submit
+          //- // Comment form end
+      
+      
+      
+        // Right sidebar start
+        .col-12.col-lg-4
+          .cat-Search
+            form(action='index.html')
+              input.form-control(type='search' placeholder='Enter kyewords..')
+          .right-block.left-menu.menu-with-title
+            h4.title-with-bg Category
+            ul
+              li.active
+                a(href='' title='Sea Freight') Sea Freight
+              li
+                a(href='' title='Railway Logistics') Railway Logistics
+              li
+                a(href='' title='Cargo Services') Cargo Services
+              li
+                a(href='' title='Latest Shipments') Latest Shipments
+          .right-block.letest-post
+            h4.title-with-bg.bg-black Latest post
+            ul
+              for post in latestPosts
+                li
+                  a(href='/actualite/'+post.id title=post.title)
+                    img(src=post.picture alt=post.title)
+                    p #{post.excrept}
+                    span 9th September 2016
+                
+
+          .left-block.blog-tag
+            h3.heading3-border.text-uppercase Tags
+            a(href='#' title='Logistics') Logistics
+            a(href='#' title='How To Build') How To Build
+            a(href='#' title='Curgo Services') Curgo Services
+            a(href='#' title='Tips') Tips
+            a(href='#' title='Latest Offers') Latest Offers
+            a(href='#' title='Sea & Trucking') Sea &amp; Trucking
+        // Right sidebar end
+  // Blog Details end
+
+

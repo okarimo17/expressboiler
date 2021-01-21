@@ -1,0 +1,117 @@
+extends ./layouts/layout.pug
+
+block pageTitle
+  title Contact Page - Dashboard
+  style. 
+    .normal-icon-size .icon{
+      width: 1rem;
+      height: 1rem;
+    }
+    .editorjs_holder {
+      background: #F8F9FE;
+      padding: 20px 0;
+      border: 1px solid rgba(0,0,0,0.1);
+      box-shadow: 1px 1px 12px 0px #a6a5ff4d;
+    }
+    img.image_preview {
+      max-height: 350px;
+      margin-top: 15px;
+      width:100%;
+      box-shadow: 2px 2px 10px #00000054;
+    }
+        
+
+block mainpage
+  // Header
+  .header.bg-primary.pb-6
+    .container-fluid
+      .header-body
+        .row.align-items-center.py-4
+          .col-lg-6.col-7
+            //- h6.h2.text-white.d-inline-block.mb-0 Actualité
+            nav.d-none.d-md-inline-block.ml-md-4(aria-label='breadcrumb')
+              ol.breadcrumb.breadcrumb-links.breadcrumb-dark
+                li.breadcrumb-item
+                  a(href='/dashboard')
+                    i.fas.fa-home
+                li.breadcrumb-item
+                  a(href='/dashboard/information') Information
+                //- li.breadcrumb-item.active(aria-current='page') 
+          //- .col-lg-6.col-5.text-right
+          //-   a.btn.btn-sm.btn-neutral(href='#') New
+          //-   a.btn.btn-sm.btn-neutral(href='#') Filters
+
+  // Page content
+  .container-fluid.mt--6
+    form.content-form
+      .row
+        .col-12.order-xl-1
+          .card
+            .card-header
+              .row.align-items-center
+                .col-8
+                  h3.mb-0 Contact Page 
+            .card-body
+              form
+                h6.heading-small.text-muted.mb-4 Contact Information
+                .pl-lg-4
+                  .row
+                    .col-lg-6
+                      .form-group
+                        label.form-control-label Phone
+                        input.form-control(name="phone" type='text' placeholder='032244554' value=information.phone)
+                    .col-lg-6
+                      .form-group
+                        label.form-control-label Mobile
+                        input.form-control(name="mobile" type='text' placeholder='0665244554' value=information.mobile)
+                  .row
+                    .col-lg-6
+                      .form-group
+                        label.form-control-label Email
+                        input.form-control(name="email" type='text' placeholder='test@mail.com' value=information.email)
+                    .col-lg-6
+                      .form-group
+                        label.form-control-label Working Time
+                        input.form-control(name="worktime" type='text'  value=information.worktime)
+                  .row
+                    .col-12
+                      .form-group
+                        label.form-control-label Adresse
+                        textarea.form-control(name="address" type='text' placeholder="address") #{information.address}
+                  .row.d-none
+                    input.form-control(name="sitename" type='text' placeholder="footer text descreption" value=information.sitename)
+                hr.my-4
+                // Social Media
+                h6.heading-small.text-muted.mb-4 Social Media
+                .pl-lg-4
+                  .row
+                    .col-lg-6
+                      .form-group
+                        label.form-control-label Facebook
+                        input.form-control(name="facebook" type='text' placeholder='fb.com/pagename' value=information.facebook)
+                    .col-lg-6
+                      .form-group
+                        label.form-control-label Twitter
+                        input.form-control(name="twitter" type='text' placeholder='twitter.com/pagename' value=information.twitter)
+                  .row
+                    .col-lg-6
+                      .form-group
+                        label.form-control-label Youtube
+                        input.form-control(name="youtube" type='text' placeholder='youtube.com/pagename' value=information.youtube)
+                    .col-lg-6
+                      .form-group
+                        label.form-control-label Instagram
+                        input.form-control(name="instagram" type='text' placeholder='instagram.com/pagename' value=information.instagram)
+                button.btn.btn-out-dotted.btn-primary.btn-square.w-100 Enregistrer l'information
+
+
+ 
+    include ./partials/footer
+
+block pagescripts
+
+  script(src='/dash/custom/information.js')
+  script(type='text/javascript').
+    $(document).ready(function(){
+      initInfoPage();
+    })

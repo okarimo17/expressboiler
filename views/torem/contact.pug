@@ -1,0 +1,76 @@
+extends ./layouts/layout.pug
+
+block title
+  title transmed 
+
+block maincontent
+  // Slider Start
+  // Breadcroumbs start
+  .wshipping-content-block.wshipping-breadcroumb.inner-bg-1
+    .container
+      .row
+        .col-12.col-lg-7
+          h1 Contact
+          a(href='index.html' title='Home') Accueil
+          |  / Contact
+        .col-12.col-lg-5.text-right
+          h4
+            | Nous exp&eacute;dions dans le monde entier La meilleure entreprise de logistique,  
+            span RAPIDE 
+            |  et 
+            span S&Eacute;CURITAIRE!
+  // Breadcroumbs end
+  // Contact Start
+  .wshipping-content-block
+    .container
+      .row.flex-lg-row-reverse
+        .col-12.col-lg-4
+          .address
+            h3 Office
+            .address-block
+              ul
+                li.address-icon
+                  strong Adderss:
+                  br
+                  |   #{information.address}
+                li.phone-icon
+                  strong Telephone:
+                  br
+                  |  #{information.mobile}  / #{information.phone}             
+                li.email-icon
+                  strong Email:
+                  br
+                  a(href='mailto:web24service@gmail.com' title='') #{information.email}
+        .col-12.col-lg-8
+          .contact-text
+            .contact-form
+              h3.heading3-border.text-uppercase Prendre Contact
+              form(id='home_contact')
+                .form-group
+                  .row
+                    .col-12.col-lg-6
+                      input.form-control(name="name" type='text' placeholder='Votre Nom')
+                    .col-12.col-lg-6
+                      input.form-control(name="entreprise" type='text' placeholder='Entreprise')
+                .form-group
+                  .row
+                    .col-12.col-lg-6
+                      input.form-control(name="email" type='email' placeholder='Email')
+                    .col-12.col-lg-6
+                      input.form-control(name="phone" type='text' placeholder='Numéro')
+                .form-group
+                  textarea.form-control(name="message" placeholder='Message')
+                .form-group
+                  button.btn.btn-submit(type='submit') Envoyer
+    // Contact end
+    // Map start
+    .map
+      iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3196.268286260634!2d3.04606681523426!3d36.76413087995605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128fb267f09b1301%3A0x47e86fec6e2b7381!2s7%20Rue%20Mouloud%20Zadi%2C%20Sidi%20M'Hamed%2016000!5e0!3m2!1sfr!2sdz!4v1609600825417!5m2!1sfr!2sdz" frameborder='0' style='border:0;' allowfullscreen='' aria-hidden='false' tabindex='0')
+    // Map end
+
+
+block customJS
+  script(src='/dash/assets/js/sweetalert2@10.js')
+  script(src="/assets/js/contact.js")
+  script. 
+    initContactHandler('contact');

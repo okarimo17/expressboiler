@@ -1,0 +1,109 @@
+extends ./layouts/layout.pug
+
+block pageTitle
+  title #{blog.title} - Actualité
+  style. 
+    .normal-icon-size .icon{
+      width: 1rem;
+      height: 1rem;
+    }
+    .editorjs_holder {
+      background: #F8F9FE;
+      padding: 20px 0;
+      border: 1px solid rgba(0,0,0,0.1);
+      box-shadow: 1px 1px 12px 0px #a6a5ff4d;
+    }
+    img.image_preview {
+      max-height: 350px;
+      margin-top: 15px;
+      width:100%;
+      box-shadow: 2px 2px 10px #00000054;
+    }
+        
+
+block mainpage
+  // Header
+  .header.bg-primary.pb-6
+    .container-fluid
+      .header-body
+        .row.align-items-center.py-4
+          .col-lg-6.col-7
+            //- h6.h2.text-white.d-inline-block.mb-0 Actualité
+            nav.d-none.d-md-inline-block.ml-md-4(aria-label='breadcrumb')
+              ol.breadcrumb.breadcrumb-links.breadcrumb-dark
+                li.breadcrumb-item
+                  a(href='/dashboard')
+                    i.fas.fa-home
+                li.breadcrumb-item
+                  a(href='/dashboard/blog') Actualité
+                li.breadcrumb-item.active(aria-current='page') #{blog.title ||"Aucune titre"}
+          //- .col-lg-6.col-5.text-right
+          //-   a.btn.btn-sm.btn-neutral(href='#') New
+          //-   a.btn.btn-sm.btn-neutral(href='#') Filters
+  // Page content
+  .container-fluid.mt--6
+    .row
+      .col.order-xl-1
+        .card
+          .card-header
+            .row.align-items-center
+              .col-8
+                h3.mb-0 Modification L'actualité 
+              //- .col-4.text-right
+              //-   a.btn.btn-sm.btn-primary(href='#') Settings
+          .card-body
+            form.content-form
+              
+              // Description
+              h6.heading-small.text-muted.mb-4 #{blog.title}
+              .pl-lg-4
+     
+                .form-group
+                  label.form-control-label Titre
+                  input.form-control(name="title" placeholder="Titre de l'actualité"  type='text' value=blog.title)
+            
+                .form-group
+                  label.form-control-label Extrait d'actualité
+                  textarea.form-control(name="excrept" rows='3' placeholder='un petit extrait du blog...') #{blog.excrept}
+                .form-group.normal-icon-size
+                  label.control-label Contenu du Actualité
+                  #editorjs.editorjs_holder
+
+              hr.my-4
+              .form-group.row.d-none
+                .col-sm-10
+                  input.image.form-control(type='text' name="picture" value=blog.picture)
+                  input.id.form-control(type='text' name="id" value=blog.id)
+
+              .form-group.row
+                label.col-sm-2.col-form-label Image
+                .col-sm-10
+                  input.form-control.feature_up(type='file')
+                .col-12 
+                  img.img-responsive.image_preview(src=blog.picture)
+                  .loading-spinner.text-center.d-none
+                    .spinner-border.text-secondary(role='status')
+                      span.sr-only Uploading Image...
+              button.btn.btn-out-dotted.btn-primary.btn-square.w-100 Enregistrer l'actualité
+
+
+
+
+       
+
+ 
+    include ./partials/footer
+
+block pagescripts
+  script(src='/dash/custom/editor/editor.js')
+  script(src='/dash/custom/editor/header.js')
+  script(src='/dash/custom/editor/image.js')
+  script(src='/dash/custom/editor/embed.js')
+  script(src='/dash/custom/editor/list.js')
+  script(src='/dash/custom/blog_single.js')
+  script(type='text/javascript').
+    $(document).ready(function(){
+      //- initServicesList();		
+      initSingleBlog(!{JSON.stringify(blog.content)});
+      //- console.log(!{JSON.stringify(service)})
+    })

@@ -1,0 +1,150 @@
+extends ./layouts/layout.pug
+
+block title
+  title transmed 
+
+block maincontent
+  
+  // Breadcroumbs start
+  .wshipping-content-block.wshipping-breadcroumb.inner-bg-1
+    .container
+      .row
+        .col-12.col-lg-7
+          h1 Nos Services
+          a(href='index.html' title='Home') Acceuil
+          |  Ce Que Nous Faisons
+        .col-12.col-lg-5.text-right
+          h4
+            | Nous exp&eacute;dions dans le monde entier La meilleure entreprise de logistique, 
+            span  RAPIDE
+            |  et 
+            span S&Eacute;CURITAIRE!
+  // Breadcroumbs end
+  // Single service start
+  .wshipping-content-block
+    .container
+      .row
+        .col-12
+          h2.text-uppercase.mt0 Ce Que Nous Faisons
+      .row
+        // Single service Gallery start
+        .col-12.col-lg-6.single-service-gallery.gallery-group-popup
+          .row
+            .col-12.l-gallery-holder
+              a.latest-gallery(href='assets/images/blog-image-5.jpg' data-fancybox='images' title='ThemeForest Project')
+                i.fa.fa-search-plus(aria-hidden='true')
+                img(src='assets/images/blog-image-5.jpg' alt='')
+            .col-12.col-md-6.col-lg-6.portfolio-holder
+              a.latest-gallery(href='assets/images/air-single-gallery2.jpg' data-fancybox='images' title='ThemeForest Project')
+                i.fa.fa-search-plus(aria-hidden='true')
+                img(src='assets/images/air-single-gallery2.jpg' alt='')
+            .col-12.col-md-6.col-lg-6.portfolio-holder
+              a.latest-gallery(href='assets/images/air-single-gallery3.jpg' data-fancybox='images' title='ThemeForest Project')
+                i.fa.fa-search-plus(aria-hidden='true')
+                img(src='assets/images/air-single-gallery3.jpg' alt='')
+        // Single service gallery end
+        // Advantages start
+        .col-12.col-lg-5.offset-lg-1
+          h3.heading3-border.text-uppercase Nos Avantages
+          .advantages
+            ul
+              li.trust
+                h5 Nous sommes dignes de confiance 
+              br
+              li.sequrity
+                h5 La meilleure s&eacute;curit&eacute;
+              br
+              li.guarantee
+                h5 100% garantie
+              br
+              li.location
+                h5 Localisation rapide
+     
+      // Advantages end
+      .space40
+      .row
+        // single service content start
+        .col-12.col-lg-7
+          p
+            strong UNE LARGE GAMME DE SERVICE 
+            br
+            | -COMMISSIONNAIRE AGR&Eacute;E EN DOUANE
+            br
+            | -D&Eacute;DOUANEMENT PARTIEL OU GLOBAL
+            br
+            | -TRANSPORT INTERNATIONAL (CONTENEURISATION OU AUTRES)
+            br
+            | &ndash; N&Eacute;GOCE IMPORT EXPORT FRET MARITIME
+            br
+            | &ndash; CONVENTION AVEC PLUSIEURS ARMATEURS AFIN DE DIMINUER LES FRAIS MAGASINAGE ET           SURESTARIES
+            br
+            | -MANAGEMENT DE PROJET IMPORT
+            br
+            | &ndash; CONSEIL ET AUDIT AUPR&Egrave;S DE PLUSIEURS GUICHETS ANDI &ndash; ANSEJ.
+            br
+            | -MARCHANDISES HORS GABARIT.
+
+                
+      
+        // single service content end
+        // Get quote start
+        .col-12.col-lg-5
+          .right-quote-from
+            h3 Prendre un rendez vous
+            form(id='home_contact')
+              .form-group
+                input.form-control(name="name" type='text' placeholder='Nom')
+              .form-group
+                input.form-control(name="email" type='email' placeholder='Email')
+              .form-group
+                input.form-control(name="phone" type='text' placeholder='Numéro')
+              .form-group
+                textarea.form-control(name="message" placeholder='Message')
+              .form-group
+                button.wshipping-button(type='submit') Envoyer
+        // Get quote end
+      // Single service end
+
+  
+ 
+  // News &amp; Testimonials Start
+  .wshipping-content-block.news-testimonial-block
+    .container.wow.fadeInUp
+      .row
+        // Latest News Start
+
+        .col-12.col-lg-5
+          h3.heading3-border.text-uppercase Transissions en cours
+          for trans in transitions
+            - let date = new Date(trans.date)
+            - let month = date.toLocaleString('default', { month: 'short' });
+            .latest-news-section.wow.fadeInUp
+              .news-date
+                | #{date.getDate()}
+                span #{month}
+              h4 #{trans.title}
+              .news-post-by
+                | By 
+                span Admin
+              p #{trans.excrept}
+
+        // Latest News End
+        // Testimonial start
+        .col-12.col-lg-7.home-testimonial
+          h3.heading3-border.text-uppercase T&eacute;moignage
+          .owl-carousel.testimonial
+            for testimonial in testimonials
+              .testimonial-item
+                .row
+                  .col-md-5
+                    .testimonial-img-bg(style=`background-image: url(${testimonial.picture});`)
+                  .col-md-7
+                    .testimonial-content
+                      p
+                        | #{testimonial.content}
+
+block customJS
+  script(src='/dash/assets/js/sweetalert2@10.js')
+  script(src="/assets/js/contact.js")
+  script. 
+    initContactHandler('service');
